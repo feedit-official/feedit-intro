@@ -1,5 +1,10 @@
 # FEEDiT — 서비스 소개 페이지
 
+> 2026-09-20 사본: 기존 영상 배경과 인터랙션을 유지하면서 `feedit-intro`의
+> `01 / IMPACT → 02 / THINK → INSIGHT → AI BRIDGE` 본문 흐름을
+> `02 / WHY FEEDiT`부터 `03.1 / HOW FEEDiT WORKS` 직전까지 이식했습니다.
+> HOW FEEDiT WORKS는 `FEED → EDIT → VTON → DECIDE` 4단계로 구성됩니다.
+
 AI Championship 2026 (Wanted × KRAFTON) 예선 제출용 랜딩 페이지.
 본 프론트(`../frontend`)와 **완전히 분리된 독립 정적 페이지**로, 브랜드 토큰만
 계승하고 마지막에 플랫폼으로 자연스럽게 인계한다.

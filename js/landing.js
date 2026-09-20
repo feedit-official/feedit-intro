@@ -98,11 +98,19 @@ gsap.utils.toArray('.why-intro,.story-card,.signal-cloud,.stats,.unify').forEach
   const side=element.dataset.side;
   gsap.from(element,{x:side==='right'?92:side==='left'?-92:0,y:side?0:72,opacity:0,scale:.975,duration:1.24,ease:'elastic.out(1,.82)',scrollTrigger:{trigger:element,start:'top 82%',toggleActions:'play none none reverse'}});
 });
-gsap.from('.signal-chip',{opacity:0,scale:.55,duration:.72,stagger:{each:.055,from:'random'},ease:'back.out(2.2)',scrollTrigger:{trigger:'.signal-cloud',start:'top 72%',toggleActions:'play none none reverse'}});
-gsap.from('.signal-core',{opacity:0,scale:.68,duration:1.05,ease:'elastic.out(1,.55)',scrollTrigger:{trigger:'.signal-cloud',start:'top 74%',toggleActions:'play none none reverse'}});
-gsap.from('.why-stream>*',{opacity:0,x:-18,stagger:.075,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.why-stream',start:'top 84%',toggleActions:'play none none reverse'}});
-gsap.from('.life-number>*',{opacity:0,y:34,rotateX:-28,stagger:.13,duration:.9,ease:'back.out(1.8)',scrollTrigger:{trigger:'.card-life',start:'top 72%',toggleActions:'play none none reverse'}});
-gsap.from('.journey>*',{opacity:0,scaleX:0,transformOrigin:'left',stagger:.08,duration:.65,ease:'power3.out',scrollTrigger:{trigger:'.card-gap',start:'top 72%',toggleActions:'play none none reverse'}});
+gsap.utils.toArray('.transfer-reveal').forEach(element=>{
+  gsap.from(element,{y:54,opacity:0,duration:1.05,ease:'expo.out',scrollTrigger:{trigger:element,start:'top 84%',toggleActions:'play none none reverse'}});
+});
+const legacySignalChips=gsap.utils.toArray('.signal-chip');
+if(legacySignalChips.length)gsap.from(legacySignalChips,{opacity:0,scale:.55,duration:.72,stagger:{each:.055,from:'random'},ease:'back.out(2.2)',scrollTrigger:{trigger:'.signal-cloud',start:'top 72%',toggleActions:'play none none reverse'}});
+const legacySignalCore=$('.signal-core');
+if(legacySignalCore)gsap.from(legacySignalCore,{opacity:0,scale:.68,duration:1.05,ease:'elastic.out(1,.55)',scrollTrigger:{trigger:'.signal-cloud',start:'top 74%',toggleActions:'play none none reverse'}});
+const legacyWhyStream=gsap.utils.toArray('.why-stream>*');
+if(legacyWhyStream.length)gsap.from(legacyWhyStream,{opacity:0,x:-18,stagger:.075,duration:.7,ease:'power3.out',scrollTrigger:{trigger:'.why-stream',start:'top 84%',toggleActions:'play none none reverse'}});
+const legacyLifeNumber=gsap.utils.toArray('.life-number>*');
+if(legacyLifeNumber.length)gsap.from(legacyLifeNumber,{opacity:0,y:34,rotateX:-28,stagger:.13,duration:.9,ease:'back.out(1.8)',scrollTrigger:{trigger:'.card-life',start:'top 72%',toggleActions:'play none none reverse'}});
+const legacyJourney=gsap.utils.toArray('.journey>*');
+if(legacyJourney.length)gsap.from(legacyJourney,{opacity:0,scaleX:0,transformOrigin:'left',stagger:.08,duration:.65,ease:'power3.out',scrollTrigger:{trigger:'.card-gap',start:'top 72%',toggleActions:'play none none reverse'}});
 const signalPanel=$('.signal-cloud');
 if(signalPanel&&!REDUCED&&matchMedia('(pointer:fine)').matches){
   signalPanel.addEventListener('pointermove',event=>{
@@ -160,6 +168,8 @@ function setSolutionStep(index,animate=true){
       if(chartLine)gsap.fromTo(chartLine,{strokeDasharray:900,strokeDashoffset:900},{strokeDashoffset:0,duration:.82,ease:'power2.out'});
       const editorial=$('.feed-editorial img',scene);
       if(editorial)gsap.fromTo(editorial,{scale:1.08},{scale:1.02,duration:1.1,ease:'power2.out'});
+      const vtonPreview=$('.vton-window img',scene);
+      if(vtonPreview)gsap.fromTo(vtonPreview,{scale:1.035,opacity:.68},{scale:1,opacity:1,duration:.9,ease:'power2.out'});
       const vote=$('.vote-meter span:first-child',scene);
       if(vote)gsap.fromTo(vote,{width:'18%'},{width:'72%',duration:.78,ease:'expo.out'});
     }else{
@@ -168,7 +178,7 @@ function setSolutionStep(index,animate=true){
     }
   });
 }
-if(solutionSection&&solutionScenes.length===3&&!REDUCED){
+if(solutionSection&&solutionScenes.length>1&&!REDUCED){
   gsap.set(solutionScenes,{autoAlpha:0,yPercent:3.5,scale:.987});
   gsap.set(solutionScenes[0],{autoAlpha:1,yPercent:0,scale:1});
   setSolutionStep(0,false);
