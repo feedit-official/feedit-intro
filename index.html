@@ -14,12 +14,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Roboto+Flex:wght@400;500;600;700&amp;family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://static.wanted.co.kr/fonts/pretendard/pretendard/pretendardvariable-dynamic-subset.min.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/wanteddev/wanted-sans@v1.0.3/packages/wanted-sans/fonts/webfonts/variable/split/WantedSansVariable.min.css">
-  <link rel="stylesheet" href="./css/landing.css?v=20260921-vton-feed">
+  <link rel="stylesheet" href="./css/landing.css?v=20260921-gate-click2">
 </head>
 <body class="experience-locked">
   <div class="experience-gate" id="experienceGate">
     <button class="experience-enter" id="experienceEnter" type="button" aria-label="FEEDiT 경험 시작">
-      <span>START THE EXPERIENCE</span><i aria-hidden="true"></i>
+      <span>START THE EXPERIENCE</span><i aria-hidden="true"></i><b class="gate-click" aria-hidden="true">CLICK TO ENTER</b>
     </button>
   </div>
   <div class="progress" aria-hidden="true"><i></i></div>
@@ -28,15 +28,6 @@
       <source src="./assets/feedit-story-4k.mp4" type="video/mp4">
     </video>
   </div>
-  <header class="wanted-nav" aria-label="대회 페이지 헤더">
-    <div class="wanted-nav-inner">
-      <div class="wanted-nav-left">
-        <div class="wanted-logo" aria-label="wanted"><img src="./assets/wanted-combined.svg" width="112" height="32" alt="wanted"></div>
-        <nav aria-label="대회 메뉴"><span>홈</span><span>전체 과제</span></nav>
-      </div>
-      <span class="login">로그인</span>
-    </div>
-  </header>
   <div class="entry-caption" id="entryCaption" aria-hidden="true">Wanted x KRAFTON Cofa AI Championship 2026 출품작 <i></i> FEEDiT</div>
   <div class="story-phases" id="storyPhases" aria-hidden="true"><span data-story-phase="impact">IMPACT</span><i></i><span data-story-phase="think">THINK</span><i></i><span data-story-phase="build">BUILD</span></div>
   <main>
@@ -50,8 +41,7 @@
           <div class="feedit-brand" aria-label="FEEDiT"><img src="./assets/feedit-logo.svg" alt=""><strong>FEED<span class="dotI">ı<span class="tit"></span></span>T</strong></div>
         </div>
       </div>
-      <div class="intro-bar"><p><strong>원티드 AI Championship 2026</strong><span>FEEDiT · Fashion Trend Intelligence</span></p><span class="fake-apply">참가 신청하기</span><span class="fake-share" aria-hidden="true">⌁</span></div>
-      <div class="scroll-cue" aria-hidden="true"><span>SCROLL TO UNZIP</span><i></i></div>
+      <div class="scroll-cue" aria-hidden="true"><span>SCROLL TO UNZIP</span><i></i><b></b></div>
     </div></section>
 
     <section class="zip-scroll" id="reveal"><div class="zip-stage sticky-panel">
@@ -217,6 +207,6 @@
   <button class="sound-toggle pending" id="soundToggle" type="button" aria-label="배경 음악 준비 중" aria-pressed="false"><span class="sound-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span class="sound-slash" aria-hidden="true"></span></button>
   <audio id="themeAudio" src="./assets/feedit-theme.wav" preload="auto" autoplay muted playsinline loop></audio>
   <div class="transition-curtain" id="curtain" aria-hidden="true"><div class="curtain-mark"><img src="./assets/feedit-transition-logo.svg" alt="FEEDiT"></div><span>ENTERING FEEDiT</span></div>
-  <script src="./vendor/three.min.js?v=0.128.0"></script><script src="./vendor/GLTFLoader.js?v=0.128.0"></script><script src="./js/wanted-reference-data.js?v=20260911-cta-copy39"></script><script src="./js/particles-webgl.js?v=20260911-cta-copy39"></script><script src="./vendor/gsap.min.js?v=3.13.0"></script><script src="./vendor/ScrollTrigger.min.js?v=3.13.0"></script><script src="./vendor/lenis.min.js?v=1.3.26"></script><script src="./js/landing.js?v=20260921-vton-feed"></script>
+  <script src="./vendor/three.min.js?v=0.128.0"></script><script src="./vendor/GLTFLoader.js?v=0.128.0"></script><script src="./js/wanted-reference-data.js?v=20260911-cta-copy39"></script><script src="./js/particles-webgl.js?v=20260911-cta-copy39"></script><script src="./vendor/gsap.min.js?v=3.13.0"></script><script src="./vendor/ScrollTrigger.min.js?v=3.13.0"></script><script src="./vendor/lenis.min.js?v=1.3.26"></script><script src="./js/landing.js?v=20260921-gate-click2"></script>
 </body>
 </html>

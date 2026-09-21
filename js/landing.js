@@ -72,7 +72,6 @@ function enterAlreadyState(){
     introReady=true;
     audioOn(true);
   });
-  gsap.to('.wanted-nav',{yPercent:-110,autoAlpha:0,duration:.7,ease:'expo.inOut',onComplete:()=>$('.wanted-nav').classList.add('hidden')});
   gsap.to('.entry-caption',{y:0,autoAlpha:1,duration:.72,ease:'expo.out',delay:.28});
 }
 
@@ -87,7 +86,6 @@ gsap.timeline({delay:2.6})
   .to(introState,{p:.70,duration:1.15,ease:'power2.inOut',onUpdate:()=>impact.setProgress(introState.p)},'<')
   .to('.sponsor-original',{autoAlpha:0,y:-18,duration:.45},'<.35')
   .to('.feedit-brand',{autoAlpha:1,y:0,duration:.6,ease:'expo.out'},'<')
-  .to('.intro-bar',{autoAlpha:0,y:35,duration:.55},'<.1')
   .to('.scroll-cue',{autoAlpha:1,duration:.5},'-=.1');
 
 ScrollTrigger.create({trigger:'.hero-scroll',start:'top top',end:'bottom bottom',onUpdate:self=>impact.setProgress(Math.max(introState.p,.70+self.progress*.06))});
@@ -235,7 +233,6 @@ ScrollTrigger.create({trigger:'.build-scroll',start:'top 78%',onEnter:()=>reveal
 gsap.from('.build-copy',{opacity:0,x:-82,duration:1.2,ease:'elastic.out(1,.8)',scrollTrigger:{trigger:'.build-scroll',start:'top 80%',toggleActions:'play none none reverse'}});
 gsap.from('.build-copy h2,.build-copy p,.build-button',{opacity:0,y:34,stagger:.07,duration:.86,ease:'back.out(1.7)',scrollTrigger:{trigger:'.build-scroll',start:'top 72%',toggleActions:'play none none reverse'}});
 
-ScrollTrigger.create({trigger:'.zip-scroll',start:'top 45%',endTrigger:'.build-scroll',end:'top 10%',onEnter:()=>$('.wanted-nav').classList.add('hidden'),onLeaveBack:()=>{if(!introReady)$('.wanted-nav').classList.remove('hidden')}});
 ScrollTrigger.create({
   trigger:'.zip-scroll',
   start:'top 92%',
